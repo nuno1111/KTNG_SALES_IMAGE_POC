@@ -1,0 +1,1 @@
+aws rekognition start-project-version --project-version-arn "arn:aws:rekognition:ap-northeast-2:610326736716:project/sales_tabaco_detect/version/sales_tabaco_detect.2022-04-26T16.20.26/1650957626427" --min-inference-units 1 --region ap-northeast-2
