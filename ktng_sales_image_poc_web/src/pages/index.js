@@ -12,6 +12,7 @@ import { ImageAnalysis } from "../components/poc/image-analysis";
 const POC = () => {
   const [imgUrl, setImgUrl] = useState("/static/images/upload-files.jpg");
   const [analysis, setAnalysis] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   return (
     <>
@@ -26,10 +27,10 @@ const POC = () => {
         }}
       >
         <Container maxWidth={false}>
-          <POCListToolbar setImgUrl={setImgUrl} setAnalysis={setAnalysis} />
+          <POCListToolbar setImgUrl={setImgUrl} setAnalysis={setAnalysis} setLoading={setLoading} />
           <Grid container spacing={3}>
             <Grid item lg={8} md={12} xl={8} xs={12}>
-              <ImageDetect sx={{ height: "100%" }} imgUrl={imgUrl} />
+              <ImageDetect sx={{ height: "100%" }} imgUrl={imgUrl} loading={loading} />
             </Grid>
 
             <Grid item lg={4} md={12} xl={4} xs={12}>

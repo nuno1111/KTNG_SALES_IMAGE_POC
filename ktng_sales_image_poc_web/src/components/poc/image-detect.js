@@ -1,7 +1,15 @@
 import Image from "next/image";
-import { Box, Card, CardContent, CardHeader, Divider, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  CardHeader,
+  Divider,
+  CircularProgress,
+  LinearProgress,
+} from "@mui/material";
 
-export const ImageDetect = ({ imgUrl, ...props }) => {
+export const ImageDetect = ({ loading, imgUrl, ...props }) => {
   return (
     <Card {...props}>
       <CardHeader title="Image Detection" />
@@ -14,7 +22,7 @@ export const ImageDetect = ({ imgUrl, ...props }) => {
             position: "relative",
           }}
         >
-          <Image alt="image detect" src={imgUrl} layout="fill" />
+          {loading ? <LinearProgress /> : <Image alt="image detect" src={imgUrl} layout="fill" />}
         </Box>
       </CardContent>
     </Card>

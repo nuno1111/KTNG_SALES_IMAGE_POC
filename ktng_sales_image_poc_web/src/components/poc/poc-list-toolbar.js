@@ -1,7 +1,7 @@
 import { Box, Button, CIcon, Typography } from "@mui/material";
 import axios from "axios";
 
-export const POCListToolbar = ({ setImgUrl, setAnalysis, ...props }) => {
+export const POCListToolbar = ({ setImgUrl, setAnalysis, setLoading, ...props }) => {
   // 이미지파일 선택
   function onChangeFile(e) {
     if (e.target.files) {
@@ -12,6 +12,7 @@ export const POCListToolbar = ({ setImgUrl, setAnalysis, ...props }) => {
       formData.append("file", uploadFile);
 
       // 서비스신청 정보 서버통신
+      setLoading(true);
       axios
         .post(reqUrl, formData, {
           headers: {
@@ -19,8 +20,14 @@ export const POCListToolbar = ({ setImgUrl, setAnalysis, ...props }) => {
           },
         })
         .then((response) => {
+          setLoading(false);
           setImgUrl(response.data.downLoadUrl);
           setAnalysis(response.data.analysis);
+        })
+        .catch((error) => {
+          setLoading(false);
+          alert(error);
+          console.log("Error >>", error);
         });
     }
   }
