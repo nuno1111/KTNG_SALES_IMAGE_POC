@@ -24,7 +24,7 @@ def display_image(image, response):
             width = imgWidth * box['Width']
             height = imgHeight * box['Height']
 
-            fnt = ImageFont.truetype('/Library/Fonts/arial.ttf', 50)
+            fnt = ImageFont.truetype('./Library/Fonts/arial.ttf', 50)
             draw.text(
                 (left, top), customLabel['Name'], fill='#00d400', font=fnt)
 
