@@ -1,1 +1,1 @@
-aws rekognition stop-project-version --project-version-arn "arn:aws:rekognition:ap-northeast-2:610326736716:project/sales_tabaco_detect/version/sales_tabaco_detect.2022-04-26T16.20.26/1650957626427" --region ap-northeast-2
+aws rekognition stop-project-version --project-version-arn "arn:aws:rekognition:ap-northeast-2:610326736716:project/sales_tabaco_detect_220506/version/sales_tabaco_detect_220506.2022-05-07T20.13.08/1651921988246" --region ap-northeast-2

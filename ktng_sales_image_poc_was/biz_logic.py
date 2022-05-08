@@ -1,5 +1,5 @@
 # POSM 종류
-posm_list = ['TOP_ADV', 'CDU', 'MAT', 'ADV']
+posm_list = ['TOP_ADV', 'CDU_S', 'CDU_L', 'MAT', 'ADV']
 
 
 def get_detection_info(response):
@@ -43,6 +43,9 @@ def get_detection_info(response):
         else:
             detection_info['status'] = 'None'
 
+        # 5. 신뢰도
+        detection_info['confidence'] = round(customLabel['Confidence'], 2)
+
         detection_info_list.append(detection_info)
 
     # 99. posm 중 detect이 되지 않았던게 있다면,
@@ -74,7 +77,10 @@ def get_detection_info(response):
 
                 # 4. 상태 : status
                 detection_info['status'] = 'None'
-                
+
+                # 5. 신뢰도
+                detection_info['confidence'] = '0'
+
                 detection_info_list.append(detection_info)
 
     return detection_info_list

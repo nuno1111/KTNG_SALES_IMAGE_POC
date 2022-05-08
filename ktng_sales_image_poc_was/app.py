@@ -8,8 +8,9 @@ from aws_s3 import upload_s3_image, download_s3_image
 app = Flask(__name__)
 
 UPLOAD_FOLDER = '/tmp'
+# UPLOAD_FOLDER = 'D:\Temp\img_temp'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
-MODEL = 'arn:aws:rekognition:ap-northeast-2:610326736716:project/sales_tabaco_detect/version/sales_tabaco_detect.2022-04-26T16.20.26/1650957626427'
+MODEL = 'arn:aws:rekognition:ap-northeast-2:610326736716:project/sales_tabaco_detect_220506/version/sales_tabaco_detect_220506.2022-05-07T20.13.08/1651921988246'
 
 S3_BUCKET = 'com-ktng-sales-image-poc'
 ORIGINAL_FOLDER = 'original/'

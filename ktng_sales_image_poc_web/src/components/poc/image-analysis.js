@@ -25,6 +25,7 @@ export const ImageAnalysis = ({ analysis, ...props }) => {
                 <TableCell>감지여부</TableCell>
                 <TableCell>상대위치</TableCell>
                 <TableCell>상태</TableCell>
+                <TableCell>신뢰도</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -54,6 +55,7 @@ export const ImageAnalysis = ({ analysis, ...props }) => {
                       {result.status}
                     </SeverityPill>
                   </TableCell>
+                  <TableCell>{result.confidence}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
