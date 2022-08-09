@@ -1,0 +1,1 @@
+aws s3 cp s3://com-ktng-sales-image-poc/datasets/ ~/DEV/DATA/datasets --recursive
